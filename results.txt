@@ -1,0 +1,21 @@
+Benchmark                          Mode  Cnt           Score           Error  Units
+JavaListBenchmarks.append1         avgt   50      162179.175 ±     15222.552  ns/op
+JavaListBenchmarks.append100       avgt   50      250258.957 ±     25737.712  ns/op
+JavaListBenchmarks.prepend1        avgt   50    40690221.175 ±   3915352.468  ns/op
+JavaListBenchmarks.prepend100      avgt   50    39568146.323 ±   2830639.147  ns/op
+JavaListBenchmarks.remove1AtEnd    avgt   50      164365.081 ±     12999.024  ns/op
+JavaListBenchmarks.remove1AtStart  avgt   50    43064891.296 ±   2865672.811  ns/op
+JavaMapBenchmarks.add1             avgt   50      235583.114 ±     30532.586  ns/op
+JavaMapBenchmarks.add100           avgt   50     1090738.985 ±   1426446.171  ns/op
+JavaMapBenchmarks.remove1          avgt   50      359963.443 ±     62094.858  ns/op
+JavaSetBenchmarks.add1             avgt   50      200902.950 ±     17086.015  ns/op
+JavaSetBenchmarks.add100           avgt   50      499850.869 ±     30198.097  ns/op
+JavaSetBenchmarks.remove1          avgt   50      289025.373 ±     23482.761  ns/op
+VavrListBenchmarks.append1         avgt   50  1433730788.648 ± 121766793.004  ns/op
+VavrListBenchmarks.append100       avgt   50  1370797928.607 ± 115254484.097  ns/op
+VavrListBenchmarks.prepend1        avgt   50      161824.235 ±      7574.952  ns/op
+VavrListBenchmarks.prepend100      avgt   50      327018.202 ±     16893.928  ns/op
+VavrListBenchmarks.remove1AtEnd    avgt   50      343441.863 ±     37088.109  ns/op
+VavrListBenchmarks.remove1AtStart  avgt   50  1496436630.200 ± 137211102.109  ns/op
+VavrMapBenchmarks.add1             avgt   50      713667.648 ±     63371.084  ns/op
+VavrMapBenchmarks.remove1          avgt   50     1381780.168 ±    111057.136  ns/op
