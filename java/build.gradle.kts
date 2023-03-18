@@ -5,8 +5,8 @@ group = projectGroup
 version = projectVersion
 
 plugins {
-    `java`
-    id("me.champeau.gradle.jmh") version "0.5.3"
+    `java-library`
+    id("me.champeau.jmh") version "0.7.0"
 }
 
 java {
@@ -19,4 +19,10 @@ dependencies {
 
     implementation("org.openjdk.jmh:jmh-core:$jmhVersion")
     implementation("org.openjdk.jmh:jmh-generator-annprocess:$jmhVersion")
+}
+
+jmh {
+    warmupIterations.set(2)
+    iterations.set(2)
+    fork.set(2)
 }
