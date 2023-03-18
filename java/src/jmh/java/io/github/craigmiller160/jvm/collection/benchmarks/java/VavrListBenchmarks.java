@@ -48,6 +48,18 @@ public class VavrListBenchmarks {
     }
 
     @Benchmark
+    public List<String> prepend1(final VavrListState state) {
+        validateState(state);
+        return state.LIST.prepend("Hello");
+    }
+
+    @Benchmark
+    public List<String> prepend100(final VavrListState state) {
+        validateState(state);
+        return state.LIST.prependAll(state.MORE_RECORDS);
+    }
+
+    @Benchmark
     public List<String> remove1AtEnd(final VavrListState state) {
         validateState(state);
         return state.LIST.removeAt(0);

@@ -52,6 +52,20 @@ public class JavaListBenchmarks {
     }
 
     @Benchmark
+    public List<String> prepend1(final ArrayListState state) {
+        validateState(state);
+        state.LIST.add(0, "Hello");
+        return state.LIST;
+    }
+
+    @Benchmark
+    public List<String> prepend100(final ArrayListState state) {
+        validateState(state);
+        state.LIST.addAll(0, state.MORE_RECORDS);
+        return state.LIST;
+    }
+
+    @Benchmark
     public List<String> remove1AtEnd(final ArrayListState state) {
         validateState(state);
         state.LIST.remove(ArrayListState.SIZE - 1);
