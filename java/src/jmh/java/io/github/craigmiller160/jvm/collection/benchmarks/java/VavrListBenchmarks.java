@@ -23,7 +23,7 @@ public class VavrListBenchmarks {
 
             final java.util.List<String> moreRecords = new ArrayList<>();
             for (int i = 0; i < 100; i++) {
-                moreRecords.add(String.valueOf(i));
+                moreRecords.add("more_%d".formatted(i));
             }
             MORE_RECORDS = List.ofAll(moreRecords);
         }

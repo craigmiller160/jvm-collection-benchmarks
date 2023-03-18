@@ -26,7 +26,7 @@ public class JavaListBenchmarks {
 
             MORE_RECORDS = new ArrayList<>();
             for (int i = 0; i < 100; i++) {
-                MORE_RECORDS.add(String.valueOf(i));
+                MORE_RECORDS.add("more_%d".formatted(i));
             }
         }
     }
