@@ -14,6 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class ListBenchmarks {
     @Benchmark
     public void hello() {
-        System.out.println("Hello World");
+//        System.out.println("Hello World");
+        String a = "hello";
     }
 }
