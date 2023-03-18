@@ -7,8 +7,8 @@ fi
 
 export WARMUP_ITERATIONS=2
 export ITERATIONS=10
-export FORK=10
-export BATCH_SIZE=1000
+export FORK=5
+export BATCH_SIZE=100
 export BENCHMARK_MODE=AverageTime
 export TIME_UNIT=ns
 export COLLECTION_SIZE=1000000
