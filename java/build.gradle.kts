@@ -14,18 +14,12 @@ java {
     targetCompatibility = JavaVersion.VERSION_19
 }
 
-dependencies {
-    val jmhVersion: String by project
-
-//    implementation("org.openjdk.jmh:jmh-core")
-}
-
 jmh {
-    warmupIterations.set(2)
-    iterations.set(10)
-    fork.set(10)
-    batchSize.set(1000)
-    warmupBatchSize.set(1000)
-    benchmarkMode.set(listOf(org.openjdk.jmh.annotations.Mode.AverageTime.name))
-    timeUnit.set(TimeUnit.NANOSECONDS.name)
+    warmupIterations.set(System.getenv("WARMUP_ITERATIONS").toInt())
+    iterations.set(System.getenv("ITERATIONS").toInt())
+    fork.set(System.getenv("FORK").toInt())
+    batchSize.set(System.getenv("BATCH_SIZE").toInt())
+    warmupBatchSize.set(System.getenv("BATCH_SIZE").toInt())
+    benchmarkMode.set(listOf(System.getenv("BENCHMARK_MODE")))
+    timeUnit.set(System.getenv("TIME_UNIT"))
 }
