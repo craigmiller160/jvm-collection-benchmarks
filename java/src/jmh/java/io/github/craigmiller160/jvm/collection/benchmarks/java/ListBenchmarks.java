@@ -29,7 +29,7 @@ public class ListBenchmarks {
 
     @Benchmark
     public List<String> listAdd(final ArrayListState state) {
-        if (state.LIST.size() != ArrayListState.SIZE) {
+        if (state.LIST.size() != 2) {
             throw new Error("State has invalid value: %d".formatted(state.LIST.size()));
         }
         state.LIST.add("Hello");
