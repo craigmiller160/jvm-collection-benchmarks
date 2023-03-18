@@ -11,10 +11,10 @@ A variety of "immutable mutation" solutions will be compared against mutable one
 | JDK                                  | 19.0.2       |
 | Build Tool                           | Gradle 8.0   |
 | JMH Version                          | 1.36         |
-| Forks                                | 10           |
+| Forks                                | 5            |
 | Iterations Per Fork                  | 10           |
 | Warmup Iterations Per Fork           | 2            |
-| Batch Size                           | 1,000        | 
+| Batch Size                           | 100          | 
 | Mode                                 | Average Time |
 | Time Unit                            | Nanoseconds  |
 | Records in Collection Being Modified | 1,000,000    |
