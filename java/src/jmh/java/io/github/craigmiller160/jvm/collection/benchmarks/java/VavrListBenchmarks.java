@@ -3,11 +3,14 @@ package io.github.craigmiller160.jvm.collection.benchmarks.java;
 import io.vavr.collection.List;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Level;
+import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
+import org.openjdk.jmh.annotations.State;
 
 import java.util.ArrayList;
 
 public class VavrListBenchmarks {
+    @State(Scope.Benchmark)
     public static class VavrListState {
         public static final int SIZE = Integer.parseInt(System.getenv("COLLECTION_SIZE"));
         public List<String> LIST;
