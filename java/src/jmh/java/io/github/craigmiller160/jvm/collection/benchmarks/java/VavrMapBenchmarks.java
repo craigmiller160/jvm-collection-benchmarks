@@ -44,8 +44,7 @@ public class VavrMapBenchmarks {
     @Benchmark
     public Map<String,String> add1(final VavrMapState state) {
         validateState(state);
-        state.MAP.put("Hello", "Hello");
-        return state.MAP;
+        return state.MAP.put("Hello", "Hello");
     }
 
     @Benchmark
