@@ -1,7 +1,7 @@
 #!/bin/sh
 
 if [ $# -ne 1 ]; then
-  echo "Must specify project to run. (java)"
+  echo "Must specify project to run. (java, kotlin)"
   exit 1
 fi
 
