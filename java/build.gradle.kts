@@ -17,12 +17,12 @@ java {
 dependencies {
     val jmhVersion: String by project
 
-    implementation("org.openjdk.jmh:jmh-core:$jmhVersion")
+//    implementation("org.openjdk.jmh:jmh-core")
 }
 
 jmh {
     warmupIterations.set(2)
-    iterations.set(2)
+    iterations.set(10)
     fork.set(10)
     batchSize.set(1000)
     warmupBatchSize.set(1000)
