@@ -4,9 +4,9 @@ This project contains benchmarks of various collection options on the JVM. The m
 
 A variety of "immutable mutation" solutions will be compared against mutable ones in this project, in the hopes of identifying the costs involved in each of them.
 
-## Benchmarking Stats
+## Benchmarking Settings
 
-| Stat                                 | Value        |
+| Settings                             | Value        |
 |--------------------------------------|--------------|
 | JDK                                  | 19.0.2       |
 | Build Tool                           | Gradle 8.0   |
@@ -18,3 +18,25 @@ A variety of "immutable mutation" solutions will be compared against mutable one
 | Mode                                 | Average Time |
 | Time Unit                            | Nanoseconds  |
 | Records in Collection Being Modified | 1,000,000    |
+
+## How to Run
+
+Use the `run.sh` script at the root of the project, passing in the name of the language-specific project directory as an argument. This ensures that the above benchmarking settings are consistently applied across all projects.
+
+## Result Summary
+
+This is a summary of the results from a round of tests run on my personal machine.
+
+### Machine Stats
+| Stat         | Value            |
+|--------------|------------------|
+| Manufacturer | Apple            |
+| Model        | MacBook Pro 16"  |
+| CPU          | M1 Pro (10 core) |
+| RAM          | 32 GB            |
+
+### List Tests
+
+| Operation    | java.util.List |
+|--------------|----------------|
+| Add one item |                |
