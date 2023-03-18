@@ -53,3 +53,11 @@ This is a summary of the results from a round of tests run on my personal machin
 | Add 1 item    |                   |                            |
 | Add 100 items |                   |                            | 
 | Remove 1 item |                   |                            |
+
+### Map Tests
+
+| Operation     | java.util.HashMap | io.vavr.collection.HashMap |
+|---------------|-------------------|----------------------------|
+| Add 1 item    |                   |                            |
+| Add 100 items |                   |                            |
+| Remove 1 item |                   |                            | 
