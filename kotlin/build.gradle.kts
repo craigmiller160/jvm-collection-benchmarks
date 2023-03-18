@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 val projectGroup: String by project
 val projectVersion: String by project
 
@@ -7,6 +9,7 @@ version = projectVersion
 plugins {
     `java-library`
     id("me.champeau.jmh") version "0.7.0"
+    kotlin("jvm") version "1.8.10"
 }
 
 java {
@@ -16,6 +19,13 @@ java {
 
 dependencies {
     implementation("io.vavr:vavr:0.10.4")
+}
+
+tasks.withType<KotlinCompile> {
+    kotlinOptions {
+        freeCompilerArgs = listOf("-Xjsr305=strict")
+        jvmTarget = "19"
+    }
 }
 
 jmh {
