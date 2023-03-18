@@ -6,3 +6,5 @@
 java/.gradle
 java/build
 *.log
+kotlin/.gradle
+kotlin/build
