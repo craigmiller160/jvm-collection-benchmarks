@@ -1,5 +1,6 @@
 package io.github.craigmiller160.jvm.collection.benchmarks.java;
 
+import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Level;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
@@ -7,6 +8,7 @@ import org.openjdk.jmh.annotations.State;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class JavaMapBenchmarks {
     @State(Scope.Benchmark)
@@ -30,5 +32,32 @@ public class JavaMapBenchmarks {
                 );
             }
         }
+    }
+
+    private void validateState(final HashMapState state) {
+        if (state.MAP.size() != HashMapState.SIZE) {
+            throw new Error("State has invalid value: %d".formatted(state.MAP.size()));
+        }
+    }
+
+    @Benchmark
+    public Map<String,String> add1(final HashMapState state) {
+        validateState(state);
+        state.MAP.put("Hello", "Hello");
+        return state.MAP;
+    }
+
+    @Benchmark
+    public Map<String,String> add100(final HashMapState state) {
+        validateState(state);
+        state.MAP.putAll(state.MORE_RECORDS);
+        return state.MAP;
+    }
+
+    @Benchmark
+    public Map<String,String> remove1(final HashMapState state) {
+        validateState(state);
+        state.MAP.remove("1000");
+        return state.MAP;
     }
 }
