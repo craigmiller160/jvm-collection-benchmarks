@@ -21,11 +21,10 @@ dependencies {
 }
 
 jmh {
-//    warmupIterations.set(2)
-//    iterations.set(2)
-    fork.set(1)
-    batchSize.set(1)
-    warmupBatchSize.set(1)
-//    includes.set(listOf("ListBenchmarks"))
-//    jvmArgs.set(listOf("-Xmx4096m"))
+    warmupIterations.set(2)
+    iterations.set(2)
+    fork.set(10)
+    batchSize.set(1000)
+    warmupBatchSize.set(1000)
+    benchmarkMode.set(listOf(org.openjdk.jmh.annotations.Mode.AverageTime.name))
 }
