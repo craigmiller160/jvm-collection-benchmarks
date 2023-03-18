@@ -6,9 +6,14 @@ A variety of "immutable mutation" solutions will be compared against mutable one
 
 ## Benchmarking Stats
 
-JDK: 19.0.2
-Build Tool: Gradle 8.0
-JMH Version: 1.36
-Forks: 10
-Iterations Per Fork: 10
-Warmup Iterations Per Fork: 2
+| Stat                       | Value        |
+|----------------------------|--------------|
+| JDK                        | 19.0.2       |
+| Build Tool                 | Gradle 8.0   |
+| JMH Version                | 1.36         |
+| Forks                      | 10           |
+| Iterations Per Fork        | 10           |
+| Warmup Iterations Per Fork | 2            |
+| Batch Size                 | 1,000        | 
+| Mode                       | Average Time |
+| Time Unit                  | Nanoseconds  |

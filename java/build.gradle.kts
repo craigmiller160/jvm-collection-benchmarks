@@ -27,4 +27,5 @@ jmh {
     batchSize.set(1000)
     warmupBatchSize.set(1000)
     benchmarkMode.set(listOf(org.openjdk.jmh.annotations.Mode.AverageTime.name))
+    timeUnit.set(TimeUnit.NANOSECONDS.name)
 }
