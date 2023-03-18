@@ -6,23 +6,25 @@ import org.openjdk.jmh.annotations.State;
 import org.openjdk.jmh.infra.Blackhole;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 public class ListBenchmarks {
+    private static final int LIST_SIZE = 1_000_000;
+
     @State(Scope.Benchmark)
     public static class ArrayListState {
-        public final List<String> LIST = IntStream.range(0, 1_000_000)
+        public final List<String> LIST = IntStream.range(0, LIST_SIZE)
                 .mapToObj(String::valueOf)
-                .toList();
+                .collect(Collectors.toList());
     }
 
     @Benchmark
-    public void listAdd(final ArrayListState state,
-                        final Blackhole blackhole) {
-        if (state.LIST.size() != 1_000_000) {
+    public List<String> listAdd(final ArrayListState state) {
+        if (state.LIST.size() != LIST_SIZE) {
             throw new RuntimeException("State has invalid value: %d".formatted(state.LIST.size()));
         }
         state.LIST.add("Hello");
-        blackhole.consume(state);
+        return state.LIST;
     }
 }
