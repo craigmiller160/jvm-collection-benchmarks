@@ -18,7 +18,7 @@ java {
 }
 
 dependencies {
-    implementation("io.vavr:vavr:0.10.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-collections-immutable-jvm:0.3.5")
 }
 
 tasks.withType<KotlinCompile> {

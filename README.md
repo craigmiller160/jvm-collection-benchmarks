@@ -37,27 +37,27 @@ This is a summary of the results from a round of tests run on my personal machin
 
 ### List Tests
 
-| Operation              | java.util.ArrayList | io.vavr.collection.List | kotlin.collection.List | kotlin.collection.MutableList |
-|------------------------|---------------------|-------------------------|------------------------|-------------------------------|
-| Append 1 item          | 1.710 ms/op         |                         |                        |                               |
-| Append 100 items       |                     |                         |                        |                               |
-| Prepend 1 item         |                     |                         |                        |                               |
-| Prepend 100 items      |                     |                         |                        |                               |
-| Remove 1 item at end   |                     |                         |                        |                               |
-| Remove 1 item at start |                     |                         |                        |                               |
+| Operation              | java.util.ArrayList | io.vavr.collection.List | kotlin.collection.List | kotlin.collection.MutableList | kotlinx.collections.immutable.PersistentList |
+|------------------------|---------------------|-------------------------|------------------------|-------------------------------|----------------------------------------------|
+| Append 1 item          | 1.710 ms/op         |                         |                        |                               |                                              |
+| Append 100 items       |                     |                         |                        |                               |                                              |
+| Prepend 1 item         |                     |                         |                        |                               |                                              |
+| Prepend 100 items      |                     |                         |                        |                               |                                              |
+| Remove 1 item at end   |                     |                         |                        |                               |                                              |
+| Remove 1 item at start |                     |                         |                        |                               |                                              |
 
 ### Set Tests
 
-| Operation     | java.util.HashSet | io.vavr.collection.HashSet | kotlin.collection.Set | kotlin.collection.MutableSet |
-|---------------|-------------------|----------------------------|-----------------------|------------------------------|
-| Add 1 item    |                   |                            |                       |                              |
-| Add 100 items |                   |                            |                       |                              |
-| Remove 1 item |                   |                            |                       |                              |
+| Operation     | java.util.HashSet | io.vavr.collection.HashSet | kotlin.collection.Set | kotlin.collection.MutableSet | kotlinx.collections.immutable.PersistentSet |
+|---------------|-------------------|----------------------------|-----------------------|------------------------------|---------------------------------------------|
+| Add 1 item    |                   |                            |                       |                              |                                             |
+| Add 100 items |                   |                            |                       |                              |                                             |
+| Remove 1 item |                   |                            |                       |                              |                                             |
 
 ### Map Tests
 
-| Operation     | java.util.HashMap | io.vavr.collection.HashMap | kotlin.collection.Map | kotlin.collection.MutableMap |
-|---------------|-------------------|----------------------------|-----------------------|------------------------------|
-| Add 1 item    |                   |                            |                       |                              |
-| Add 100 items |                   |                            |                       |                              |
-| Remove 1 item |                   |                            |                       |                              |
+| Operation     | java.util.HashMap | io.vavr.collection.HashMap | kotlin.collection.Map | kotlin.collection.MutableMap | kotlinx.collections.immutable.PersistentMap |
+|---------------|-------------------|----------------------------|-----------------------|------------------------------|---------------------------------------------|
+| Add 1 item    |                   |                            |                       |                              |                                             |
+| Add 100 items |                   |                            |                       |                              |                                             |
+| Remove 1 item |                   |                            |                       |                              |                                             |
