@@ -28,21 +28,21 @@ class KotlinMutableSetBenchmarks {
     }
 
     @Benchmark
-    fun add1(state: KotlinMutableSetState): Set<String?>? {
+    fun add1(state: KotlinMutableSetState): Set<String> {
         validateState(state)
         state.SET += "Hello"
         return state.SET
     }
 
     @Benchmark
-    fun add100(state: KotlinMutableSetState): Set<String?>? {
+    fun add100(state: KotlinMutableSetState): Set<String> {
         validateState(state)
         state.SET += state.MORE_RECORDS
         return state.SET
     }
 
     @Benchmark
-    fun remove1(state: KotlinMutableSetState): Set<String?>? {
+    fun remove1(state: KotlinMutableSetState): Set<String> {
         validateState(state)
         state.SET.remove("1000")
         return state.SET

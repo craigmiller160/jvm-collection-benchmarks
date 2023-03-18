@@ -28,19 +28,19 @@ class KotlinSetBenchmarks {
     }
 
     @Benchmark
-    fun add1(state: KotlinSetState): Set<String?>? {
+    fun add1(state: KotlinSetState): Set<String> {
         validateState(state)
         return state.SET + "Hello"
     }
 
     @Benchmark
-    fun add100(state: KotlinSetState): Set<String?>? {
+    fun add100(state: KotlinSetState): Set<String> {
         validateState(state)
         return state.SET + state.MORE_RECORDS
     }
 
     @Benchmark
-    fun remove1(state: KotlinSetState): Set<String?>? {
+    fun remove1(state: KotlinSetState): Set<String> {
         validateState(state)
         return state.SET.filter { it != "1000" }.toSet()
     }
