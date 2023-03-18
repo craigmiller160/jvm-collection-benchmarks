@@ -14,4 +14,4 @@ export TIME_UNIT=ns
 export COLLECTION_SIZE=1000000
 
 cd $1
-gradle jmh --info
+gradle jmh
