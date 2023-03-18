@@ -9,7 +9,7 @@ import org.openjdk.jmh.annotations.State;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListBenchmarks {
+public class JavaListBenchmarks {
 
     @State(Scope.Benchmark)
     public static class ArrayListState {
@@ -38,28 +38,28 @@ public class ListBenchmarks {
     }
 
     @Benchmark
-    public List<String> listAppend1(final ArrayListState state) {
+    public List<String> append1(final ArrayListState state) {
         validateState(state);
         state.LIST.add("Hello");
         return state.LIST;
     }
 
     @Benchmark
-    public List<String> listAppend100(final ArrayListState state) {
+    public List<String> append100(final ArrayListState state) {
         validateState(state);
         state.LIST.addAll(state.MORE_RECORDS);
         return state.LIST;
     }
 
     @Benchmark
-    public List<String> listRemove1AtEnd(final ArrayListState state) {
+    public List<String> remove1AtEnd(final ArrayListState state) {
         validateState(state);
         state.LIST.remove(ArrayListState.SIZE - 1);
         return state.LIST;
     }
 
     @Benchmark
-    public List<String> listRemove1AtStart(final ArrayListState state) {
+    public List<String> remove1AtStart(final ArrayListState state) {
         validateState(state);
         state.LIST.remove(0);
         return state.LIST;
