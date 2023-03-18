@@ -1,20 +1,28 @@
 package io.github.craigmiller160.jvm.collection.benchmarks.java;
 
-import org.openjdk.jmh.annotations.*;
-import org.openjdk.jmh.profile.GCProfiler;
-import org.openjdk.jmh.runner.Runner;
-import org.openjdk.jmh.runner.RunnerException;
-import org.openjdk.jmh.runner.options.OptionsBuilder;
+import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.Scope;
+import org.openjdk.jmh.annotations.State;
+import org.openjdk.jmh.infra.Blackhole;
 
-import java.util.concurrent.TimeUnit;
+import java.util.List;
+import java.util.stream.IntStream;
 
-@State(Scope.Benchmark)
-//@OutputTimeUnit(TimeUnit.NANOSECONDS)
-//@BenchmarkMode(Mode.AverageTime)
 public class ListBenchmarks {
+    @State(Scope.Benchmark)
+    public static class ArrayListState {
+        public final List<String> LIST = IntStream.range(0, 1_000_000)
+                .mapToObj(String::valueOf)
+                .toList();
+    }
+
     @Benchmark
-    public void hello() {
-//        System.out.println("Hello World");
-        String a = "hello";
+    public void listAdd(final ArrayListState state,
+                        final Blackhole blackhole) {
+        if (state.LIST.size() != 1_000_000) {
+            throw new RuntimeException("State has invalid value: %d".formatted(state.LIST.size()));
+        }
+        state.LIST.add("Hello");
+        blackhole.consume(state);
     }
 }
