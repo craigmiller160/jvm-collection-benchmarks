@@ -50,9 +50,9 @@ This is a summary of the results from a round of tests run on my personal machin
 
 | Operation     | java.util.HashSet | io.vavr.collection.HashSet | kotlin.collection.Set | kotlin.collection.MutableSet | kotlinx.collections.immutable.PersistentSet |
 |---------------|-------------------|----------------------------|-----------------------|------------------------------|---------------------------------------------|
-| Add 1 item    |                   |                            |                       |                              |                                             |
-| Add 100 items |                   |                            |                       |                              |                                             |
-| Remove 1 item |                   |                            |                       |                              |                                             |
+| Add 1 item    | 0.201 ms/op       |                            |                       |                              |                                             |
+| Add 100 items | 0.500 ms/op       |                            |                       |                              |                                             |
+| Remove 1 item | 0.289 ms/op       |                            |                       |                              |                                             |
 
 ### Map Tests
 
