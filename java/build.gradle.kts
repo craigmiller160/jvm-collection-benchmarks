@@ -18,11 +18,11 @@ dependencies {
     val jmhVersion: String by project
 
     implementation("org.openjdk.jmh:jmh-core:$jmhVersion")
-    implementation("org.openjdk.jmh:jmh-generator-annprocess:$jmhVersion")
 }
 
 jmh {
     warmupIterations.set(2)
     iterations.set(2)
     fork.set(2)
+    includes.set(listOf("ListBenchmarks"))
 }

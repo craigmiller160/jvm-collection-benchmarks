@@ -12,12 +12,6 @@ import java.util.concurrent.TimeUnit;
 @OutputTimeUnit(TimeUnit.NANOSECONDS)
 @BenchmarkMode(Mode.AverageTime)
 public class ListBenchmarks {
-    public static void main(final String[] args) throws RunnerException {
-        final var options = new OptionsBuilder()
-                .addProfiler(GCProfiler.class) // TODO what profiler?
-                .build();
-        new Runner(options).run();
-    }
     @Benchmark
     public void hello() {
         System.out.println("Hello World");
