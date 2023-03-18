@@ -30,37 +30,37 @@ class KotlinxPersistentListBenchmarks {
     }
 
     @Benchmark
-    fun append1(state: KotlinListState): List<String> {
+    fun append1(state: KotlinListState): PersistentList<String> {
         validateState(state)
         return state.LIST.add("Hello")
     }
 
     @Benchmark
-    fun append100(state: KotlinListState): List<String> {
+    fun append100(state: KotlinListState): PersistentList<String> {
         validateState(state)
         return state.LIST.addAll(state.MORE_RECORDS)
     }
 
     @Benchmark
-    fun prepend1(state: KotlinListState): List<String> {
+    fun prepend1(state: KotlinListState): PersistentList<String> {
         validateState(state)
         return state.LIST.add(0, "Hello")
     }
 
     @Benchmark
-    fun prepend100(state: KotlinListState): List<String> {
+    fun prepend100(state: KotlinListState): PersistentList<String> {
         validateState(state)
         return state.LIST.addAll(0, state.MORE_RECORDS)
     }
 
     @Benchmark
-    fun remove1AtEnd(state: KotlinListState): List<String> {
+    fun remove1AtEnd(state: KotlinListState): PersistentList<String> {
         validateState(state)
         return state.LIST.removeAt(state.SIZE - 1)
     }
 
     @Benchmark
-    fun remove1AtStart(state: KotlinListState): List<String> {
+    fun remove1AtStart(state: KotlinListState): PersistentList<String> {
         validateState(state)
         return state.LIST.removeAt(0)
     }
