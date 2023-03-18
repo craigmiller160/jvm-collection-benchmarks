@@ -14,12 +14,20 @@ java {
     targetCompatibility = JavaVersion.VERSION_19
 }
 
-jmh {
-    warmupIterations.set(System.getenv("WARMUP_ITERATIONS").toInt())
-    iterations.set(System.getenv("ITERATIONS").toInt())
-    fork.set(System.getenv("FORK").toInt())
-    batchSize.set(System.getenv("BATCH_SIZE").toInt())
-    warmupBatchSize.set(System.getenv("BATCH_SIZE").toInt())
-    benchmarkMode.set(listOf(System.getenv("BENCHMARK_MODE")))
-    timeUnit.set(System.getenv("TIME_UNIT"))
+dependencies {
+    implementation("io.vavr:vavr:0.10.4")
 }
+
+jmh {
+    warmupIterations.set(getenv("WARMUP_ITERATIONS", "2").toInt())
+    iterations.set(getenv("ITERATIONS", "10").toInt())
+    fork.set(getenv("FORK", "10").toInt())
+    batchSize.set(getenv("BATCH_SIZE", "1000").toInt())
+    warmupBatchSize.set(getenv("BATCH_SIZE", "1000").toInt())
+    benchmarkMode.set(listOf(getenv("BENCHMARK_MODE", "AverageTime")))
+    timeUnit.set(getenv("TIME_UNIT", "ns"))
+}
+
+// Default value is necessary for IDE to run script
+fun getenv(name: String, defaultValue: String): String =
+    System.getenv(name) ?: defaultValue
