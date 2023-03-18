@@ -21,8 +21,11 @@ dependencies {
 }
 
 jmh {
-    warmupIterations.set(2)
-    iterations.set(2)
-    fork.set(2)
-    includes.set(listOf("ListBenchmarks"))
+//    warmupIterations.set(2)
+//    iterations.set(2)
+    fork.set(1)
+    batchSize.set(1)
+    warmupBatchSize.set(1)
+//    includes.set(listOf("ListBenchmarks"))
+//    jvmArgs.set(listOf("-Xmx4096m"))
 }
