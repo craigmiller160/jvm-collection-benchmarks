@@ -39,4 +39,4 @@ This is a summary of the results from a round of tests run on my personal machin
 
 | Operation    | java.util.List |
 |--------------|----------------|
-| Add one item |                |
+| Add one item | 1.710 ms/op    |
