@@ -11,6 +11,7 @@ export FORK=10
 export BATCH_SIZE=1000
 export BENCHMARK_MODE=AverageTime
 export TIME_UNIT=ns
+export COLLECTION_SIZE=1000000
 
 cd $1
 gradle jmh

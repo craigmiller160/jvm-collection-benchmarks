@@ -9,33 +9,30 @@ import org.openjdk.jmh.annotations.State;
 import java.util.ArrayList;
 import java.util.List;
 
-@State(Scope.Benchmark)
 public class ListBenchmarks {
-    private static final int LIST_SIZE = 1_000_000;
 
-//    @State(Scope.Thread)
-//    public static class ArrayListState {
-//        public final List<String> LIST = IntStream.range(0, LIST_SIZE)
-//                .mapToObj(String::valueOf)
-//                .collect(Collectors.toList());
-//    }
+    @State(Scope.Benchmark)
+    public static class ArrayListState {
+        public static final int SIZE = Integer.parseInt(System.getenv("COLLECTION_SIZE"));
+        public List<String> LIST;
 
-    private List<String> list;
-
-    @Setup(Level.Invocation)
-    public void setUp() {
-        list = new ArrayList<>();
-        for (int i = 0; i < LIST_SIZE; i++) {
-            list.add(String.valueOf(i));
+        @Setup(Level.Invocation)
+        public void setUp() {
+            LIST = new ArrayList<>();
+            for (int i = 0; i < SIZE; i++) {
+                LIST.add(String.valueOf(i));
+            }
         }
     }
 
+
+
     @Benchmark
-    public List<String> listAdd() {
-        if (list.size() != LIST_SIZE) {
-            throw new Error("State has invalid value: %d".formatted(list.size()));
+    public List<String> listAdd(final ArrayListState state) {
+        if (state.LIST.size() != ArrayListState.SIZE) {
+            throw new Error("State has invalid value: %d".formatted(state.LIST.size()));
         }
-        list.add("Hello");
-        return list;
+        state.LIST.add("Hello");
+        return state.LIST;
     }
 }
