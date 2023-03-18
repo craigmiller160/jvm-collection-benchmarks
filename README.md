@@ -48,16 +48,16 @@ This is a summary of the results from a round of tests run on my personal machin
 
 ### Set Tests
 
-| Operation     | java.util.HashSet | io.vavr.collection.HashSet |
-|---------------|-------------------|----------------------------|
-| Add 1 item    |                   |                            |
-| Add 100 items |                   |                            | 
-| Remove 1 item |                   |                            |
+| Operation     | java.util.HashSet | io.vavr.collection.HashSet | kotlin.collection.Set | kotlin.collection.MutableSet |
+|---------------|-------------------|----------------------------|-----------------------|------------------------------|
+| Add 1 item    |                   |                            |                       |                              |
+| Add 100 items |                   |                            |                       |                              |
+| Remove 1 item |                   |                            |                       |                              |
 
 ### Map Tests
 
-| Operation     | java.util.HashMap | io.vavr.collection.HashMap |
-|---------------|-------------------|----------------------------|
-| Add 1 item    |                   |                            |
-| Add 100 items |                   |                            |
-| Remove 1 item |                   |                            | 
+| Operation     | java.util.HashMap | io.vavr.collection.HashMap | kotlin.collection.Map | kotlin.collection.MutableMap |
+|---------------|-------------------|----------------------------|-----------------------|------------------------------|
+| Add 1 item    |                   |                            |                       |                              |
+| Add 100 items |                   |                            |                       |                              |
+| Remove 1 item |                   |                            |                       |                              |
