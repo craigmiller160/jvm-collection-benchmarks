@@ -1,1 +1,3 @@
-rootProject.name = "jvm-colllection-benchmarks-java"
+val projectName: String by settings
+
+rootProject.name = projectName

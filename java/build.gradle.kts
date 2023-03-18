@@ -1,5 +1,8 @@
-group = "io.github.craigmiller160"
-version = "1.0.0-SNAPSHOT"
+val projectGroup: String by project
+val projectVersion: String by project
+
+group = projectGroup
+version = projectVersion
 
 plugins {
     `java`
