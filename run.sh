@@ -10,6 +10,7 @@ function verify_args {
     java|kotlin) ;;
     *)
       echo "Invalid project name: $1"
+      exit 1
     ;;
   esac
 }
