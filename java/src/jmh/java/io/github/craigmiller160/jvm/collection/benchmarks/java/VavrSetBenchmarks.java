@@ -20,7 +20,7 @@ public class VavrSetBenchmarks {
         public void setup() {
             final java.util.Set<String> set = new java.util.HashSet<>();
             for (int i = 0; i < SIZE; i++) {
-                SET.add(String.valueOf(i));
+                set.add(String.valueOf(i));
             }
             SET = HashSet.ofAll(set);
 
