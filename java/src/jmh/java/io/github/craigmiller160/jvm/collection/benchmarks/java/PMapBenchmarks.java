@@ -34,27 +34,27 @@ public class PMapBenchmarks {
         }
     }
 
-    private void validateState(final VavrMapBenchmarks.PMapState state) {
-        if (state.MAP.size() != VavrMapBenchmarks.PMapState.SIZE) {
+    private void validateState(final PMapState state) {
+        if (state.MAP.size() != PMapState.SIZE) {
             throw new Error("State has invalid value: %d".formatted(state.MAP.size()));
         }
     }
 
     @Benchmark
-    public Map<String,String> add1(final VavrMapBenchmarks.PMapState state) {
+    public PMap<String,String> add1(final PMapState state) {
         validateState(state);
-        return state.MAP.put("Hello", "Hello");
+        return state.MAP.plus("Hello", "Hello");
     }
 
     @Benchmark
-    public Map<String,String> add100(final VavrMapBenchmarks.PMapState state) {
+    public PMap<String,String> add100(final PMapState state) {
         validateState(state);
-        return state.MAP.merge(state.MORE_RECORDS);
+        return state.MAP.plusAll(state.MORE_RECORDS);
     }
 
     @Benchmark
-    public Map<String,String> remove1(final VavrMapBenchmarks.PMapState state) {
+    public PMap<String,String> remove1(final PMapState state) {
         validateState(state);
-        return state.MAP.remove("1000");
+        return state.MAP.minus("1000");
     }
 }
