@@ -26,7 +26,7 @@ jmh {
     warmupBatchSize.set(getenv("BATCH_SIZE", "1000").toInt())
     benchmarkMode.set(listOf(getenv("BENCHMARK_MODE", "AverageTime")))
     timeUnit.set(getenv("TIME_UNIT", "ns"))
-    includes.set(listOf("VavrMapBenchmarks.add100")) // TODO make env
+    includes.set(listOf(getenv("INCLUDES", "")))
 }
 
 // Default value is necessary for IDE to run script
