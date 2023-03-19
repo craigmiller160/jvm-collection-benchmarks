@@ -6,9 +6,9 @@ import org.openjdk.jmh.annotations.Scope
 import org.openjdk.jmh.annotations.Setup
 import org.openjdk.jmh.annotations.State
 
-class KotlinMutableMapBenchmarks {
+open class KotlinMutableMapBenchmarks {
     @State(Scope.Benchmark)
-    class KotlinMutableMapState {
+    open class KotlinMutableMapState {
         val SIZE: Int = System.getenv("COLLECTION_SIZE").toInt()
 
         lateinit var MAP: MutableMap<String,String>

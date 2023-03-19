@@ -6,9 +6,9 @@ import org.openjdk.jmh.annotations.Scope
 import org.openjdk.jmh.annotations.Setup
 import org.openjdk.jmh.annotations.State
 
-class KotlinMutableListBenchmarks {
+open class KotlinMutableListBenchmarks {
     @State(Scope.Benchmark)
-    class KotlinMutableListState {
+    open class KotlinMutableListState {
         val SIZE: Int = System.getenv("COLLECTION_SIZE").toInt()
 
         lateinit var LIST: MutableList<String>

@@ -8,9 +8,9 @@ import org.openjdk.jmh.annotations.Scope
 import org.openjdk.jmh.annotations.Setup
 import org.openjdk.jmh.annotations.State
 
-class KotlinxPersistentSetBenchmarks {
+open class KotlinxPersistentSetBenchmarks {
     @State(Scope.Benchmark)
-    class KotlinSetState {
+    open class KotlinSetState {
         val SIZE: Int = System.getenv("COLLECTION_SIZE").toInt()
 
         lateinit var SET: PersistentSet<String>

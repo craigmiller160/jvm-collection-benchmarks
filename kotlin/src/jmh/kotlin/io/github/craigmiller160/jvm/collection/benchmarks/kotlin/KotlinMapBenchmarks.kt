@@ -6,9 +6,9 @@ import org.openjdk.jmh.annotations.Scope
 import org.openjdk.jmh.annotations.Setup
 import org.openjdk.jmh.annotations.State
 
-class KotlinMapBenchmarks {
+open class KotlinMapBenchmarks {
     @State(Scope.Benchmark)
-    class KotlinMapState {
+    open class KotlinMapState {
         val SIZE: Int = System.getenv("COLLECTION_SIZE").toInt()
 
         lateinit var MAP: Map<String,String>

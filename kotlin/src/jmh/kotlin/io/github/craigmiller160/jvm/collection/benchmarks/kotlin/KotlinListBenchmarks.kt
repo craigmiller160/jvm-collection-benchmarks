@@ -6,9 +6,9 @@ import org.openjdk.jmh.annotations.Scope
 import org.openjdk.jmh.annotations.Setup
 import org.openjdk.jmh.annotations.State
 
-class KotlinListBenchmarks {
+open class KotlinListBenchmarks {
     @State(Scope.Benchmark)
-    class KotlinListState {
+    open class KotlinListState {
         val SIZE: Int = System.getenv("COLLECTION_SIZE").toInt()
 
         lateinit var LIST: List<String>
