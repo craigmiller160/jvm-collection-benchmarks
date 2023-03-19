@@ -64,9 +64,9 @@ This is a summary of the results from a round of tests run on my personal machin
 
 | Operation     | java.util.HashSet | io.vavr.collection.HashSet | org.pcollections.HashTreePSet | kotlin.collection.Set | kotlin.collection.MutableSet | kotlinx.collections.immutable.PersistentSet |
 |---------------|-------------------|----------------------------|-------------------------------|-----------------------|------------------------------|---------------------------------------------|
-| Add 1 item    | 0.201 ms/op       | 0.159 ms/op                |                               |                       |                              |                                             |
-| Add 100 items | 0.500 ms/op       |                            |                               |                       |                              |                                             |
-| Remove 1 item | 0.289 ms/op       |                            |                               |                       |                              |                                             |
+| Add 1 item    | 0.201 ms/op       | 1.073 ms/op                |                               |                       |                              |                                             |
+| Add 100 items | 0.500 ms/op       | 4.029 ms/op                |                               |                       |                              |                                             |
+| Remove 1 item | 0.289 ms/op       | 1.385 ms/op                |                               |                       |                              |                                             |
 
 ### Map Tests
 
@@ -85,7 +85,7 @@ This is a summary of the results from a round of tests run on my personal machin
 
 ### Sets
 
-1. 
+1. io.
 
 ### Maps
 
