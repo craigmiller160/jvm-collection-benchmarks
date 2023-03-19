@@ -75,3 +75,18 @@ This is a summary of the results from a round of tests run on my personal machin
 | Add 1 item    | 0.236 ms/op       | 0.714 ms/op                |                       |                              |                                             |
 | Add 100 items | 1.091 ms/op       | 5.444 ms/op                |                       |                              |                                             |
 | Remove 1 item | 0.360 ms/op       | 1.382 ms/op                |                       |                              |                                             |
+
+## Thoughts on the Results
+
+### Lists
+
+1. Prepend operations on java.util.List are extremely slow because of the need to shift the existing elements. I expected as much, but knowing that Vavr is most efficient with its prepend operations I felt it was important to include this for comparison.
+2. io.vavr.collection.List requires its prepend operations to be used in order to be efficient. This can lead to counter-intuitive ordering when building a list. In addition, its remove operations appear to work best at the end of the list, not the beginning. Overall it can be an extremely efficient data structure, but it has to be used very precisely in order to achieve this.
+
+### Sets
+
+1. 
+
+### Maps
+
+1. io.vavr.collection.HasMap was slower across the board than I anticipated when compared to java.util.HashMap.
