@@ -37,6 +37,12 @@ Use the `run.sh` script at the root of the project, as it will set environment v
 ./run.sh kotlin KotlinListBenchmarks.append1
 ```
 
+## Classes Being Tested
+
+| Collection | Language | Source   | Version | Class               |
+|------------|----------|----------|---------|---------------------|
+| List       | Java     | Java SDK | 19      | java.util.ArrayList |
+
 ## Result Summary
 
 This is a summary of the results from a round of tests run on my personal machine.
