@@ -59,5 +59,5 @@ This is a summary of the results from a round of tests run on my personal machin
 | Operation     | java.util.HashMap | io.vavr.collection.HashMap | kotlin.collection.Map | kotlin.collection.MutableMap | kotlinx.collections.immutable.PersistentMap |
 |---------------|-------------------|----------------------------|-----------------------|------------------------------|---------------------------------------------|
 | Add 1 item    | 0.236 ms/op       | 0.714 ms/op                |                       |                              |                                             |
-| Add 100 items | 1.091 ms/op       |                            |                       |                              |                                             |
+| Add 100 items | 1.091 ms/op       | 5.444 ms/op                |                       |                              |                                             |
 | Remove 1 item | 0.360 ms/op       | 1.382 ms/op                |                       |                              |                                             |
