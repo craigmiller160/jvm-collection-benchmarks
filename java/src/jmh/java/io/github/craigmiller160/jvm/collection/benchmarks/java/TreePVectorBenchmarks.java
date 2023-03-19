@@ -1,0 +1,77 @@
+package io.github.craigmiller160.jvm.collection.benchmarks.java;
+
+import org.openjdk.jmh.annotations.Benchmark;
+import org.openjdk.jmh.annotations.Level;
+import org.openjdk.jmh.annotations.Scope;
+import org.openjdk.jmh.annotations.Setup;
+import org.openjdk.jmh.annotations.State;
+import org.pcollections.PVector;
+import org.pcollections.TreePVector;
+
+import java.util.ArrayList;
+
+public class TreePVectorBenchmarks {
+    @State(Scope.Benchmark)
+    public static class TreePVectorState {
+        public static final int SIZE = Integer.parseInt(System.getenv("COLLECTION_SIZE"));
+        public PVector<String> LIST;
+        public PVector<String> MORE_RECORDS;
+
+        @Setup(Level.Invocation)
+        public void setUp() {
+            final java.util.List<String> list = new ArrayList<>();
+            for (int i = 0; i < SIZE; i++) {
+                list.add(String.valueOf(i));
+            }
+            LIST = TreePVector.from(list);
+
+            final java.util.List<String> moreRecords = new ArrayList<>();
+            for (int i = 0; i < 100; i++) {
+                moreRecords.add("more_%d".formatted(i));
+            }
+            MORE_RECORDS = TreePVector.from(moreRecords);
+        }
+    }
+
+    private void validateState(final TreePVectorState state) {
+        if (state.LIST.size() != TreePVectorState.SIZE) {
+            throw new Error("State has invalid value: %d".formatted(state.LIST.size()));
+        }
+    }
+
+    @Benchmark
+    public PVector<String> append1(final TreePVectorState state) {
+        validateState(state);
+        return state.LIST.plus("Hello");
+    }
+
+    @Benchmark
+    public PVector<String> append100(final TreePVectorState state) {
+        validateState(state);
+        return state.LIST.plusAll(state.MORE_RECORDS);
+    }
+
+    @Benchmark
+    public PVector<String> prepend1(final TreePVectorState state) {
+        validateState(state);
+        return state.LIST.plus(0, "Hello");
+    }
+
+    @Benchmark
+    public PVector<String> prepend100(final TreePVectorState state) {
+        validateState(state);
+        return state.LIST.plusAll(0, state.MORE_RECORDS);
+    }
+
+    @Benchmark
+    public PVector<String> remove1AtEnd(final TreePVectorState state) {
+        validateState(state);
+        return state.LIST.minus(0);
+    }
+
+    @Benchmark
+    public PVector<String> remove1AtStart(final TreePVectorState state) {
+        validateState(state);
+        return state.LIST.minus(TreePVectorState.SIZE - 1);
+    }
+}
