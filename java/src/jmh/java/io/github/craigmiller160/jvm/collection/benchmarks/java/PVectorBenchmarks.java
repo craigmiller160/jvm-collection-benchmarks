@@ -10,9 +10,9 @@ import org.pcollections.TreePVector;
 
 import java.util.ArrayList;
 
-public class TreePVectorBenchmarks {
+public class PVectorBenchmarks {
     @State(Scope.Benchmark)
-    public static class TreePVectorState {
+    public static class PVectorState {
         public static final int SIZE = Integer.parseInt(System.getenv("COLLECTION_SIZE"));
         public PVector<String> LIST;
         public PVector<String> MORE_RECORDS;
@@ -33,45 +33,45 @@ public class TreePVectorBenchmarks {
         }
     }
 
-    private void validateState(final TreePVectorState state) {
-        if (state.LIST.size() != TreePVectorState.SIZE) {
+    private void validateState(final PVectorState state) {
+        if (state.LIST.size() != PVectorState.SIZE) {
             throw new Error("State has invalid value: %d".formatted(state.LIST.size()));
         }
     }
 
     @Benchmark
-    public PVector<String> append1(final TreePVectorState state) {
+    public PVector<String> append1(final PVectorState state) {
         validateState(state);
         return state.LIST.plus("Hello");
     }
 
     @Benchmark
-    public PVector<String> append100(final TreePVectorState state) {
+    public PVector<String> append100(final PVectorState state) {
         validateState(state);
         return state.LIST.plusAll(state.MORE_RECORDS);
     }
 
     @Benchmark
-    public PVector<String> prepend1(final TreePVectorState state) {
+    public PVector<String> prepend1(final PVectorState state) {
         validateState(state);
         return state.LIST.plus(0, "Hello");
     }
 
     @Benchmark
-    public PVector<String> prepend100(final TreePVectorState state) {
+    public PVector<String> prepend100(final PVectorState state) {
         validateState(state);
         return state.LIST.plusAll(0, state.MORE_RECORDS);
     }
 
     @Benchmark
-    public PVector<String> remove1AtEnd(final TreePVectorState state) {
+    public PVector<String> remove1AtEnd(final PVectorState state) {
         validateState(state);
         return state.LIST.minus(0);
     }
 
     @Benchmark
-    public PVector<String> remove1AtStart(final TreePVectorState state) {
+    public PVector<String> remove1AtStart(final PVectorState state) {
         validateState(state);
-        return state.LIST.minus(TreePVectorState.SIZE - 1);
+        return state.LIST.minus(PVectorState.SIZE - 1);
     }
 }
