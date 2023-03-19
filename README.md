@@ -40,11 +40,11 @@ This is a summary of the results from a round of tests run on my personal machin
 | Operation              | java.util.ArrayList | io.vavr.collection.List | kotlin.collection.List | kotlin.collection.MutableList | kotlinx.collections.immutable.PersistentList |
 |------------------------|---------------------|-------------------------|------------------------|-------------------------------|----------------------------------------------|
 | Append 1 item          | 0.162 ms/op         | 1,433.731 ms/op         |                        |                               |                                              |
-| Append 100 items       | 0.250 ms/op         |                         |                        |                               |                                              |
+| Append 100 items       | 0.250 ms/op         | 1,370.798 ms/op         |                        |                               |                                              |
 | Prepend 1 item         | 40.690 ms/op        | 0.162 ms/op             |                        |                               |                                              |
-| Prepend 100 items      | 39.568 ms/op        |                         |                        |                               |                                              |
-| Remove 1 item at end   | 0.164 ms/op         |                         |                        |                               |                                              |
-| Remove 1 item at start | 43.065 ms/op        |                         |                        |                               |                                              |
+| Prepend 100 items      | 39.568 ms/op        | 0.327 ms/op             |                        |                               |                                              |
+| Remove 1 item at end   | 0.164 ms/op         | 0.343 ms/op             |                        |                               |                                              |
+| Remove 1 item at start | 43.065 ms/op        | 1,496.437 ms/op         |                        |                               |                                              |
 
 ### Set Tests
 
@@ -58,6 +58,6 @@ This is a summary of the results from a round of tests run on my personal machin
 
 | Operation     | java.util.HashMap | io.vavr.collection.HashMap | kotlin.collection.Map | kotlin.collection.MutableMap | kotlinx.collections.immutable.PersistentMap |
 |---------------|-------------------|----------------------------|-----------------------|------------------------------|---------------------------------------------|
-| Add 1 item    | 0.236 ms/op       |                            |                       |                              |                                             |
+| Add 1 item    | 0.236 ms/op       | 0.714 ms/op                |                       |                              |                                             |
 | Add 100 items | 1.091 ms/op       |                            |                       |                              |                                             |
-| Remove 1 item | 0.360 ms/op       |                            |                       |                              |                                             |
+| Remove 1 item | 0.360 ms/op       | 1.382 ms/op                |                       |                              |                                             |
