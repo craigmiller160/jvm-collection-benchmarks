@@ -31,7 +31,7 @@ public class VavrMapBenchmarks {
                         "more_%d".formatted(i)
                 );
             }
-
+            MORE_RECORDS = HashMap.ofAll(moreRecords);
         }
     }
 
