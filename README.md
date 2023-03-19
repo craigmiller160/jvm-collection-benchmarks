@@ -85,7 +85,7 @@ This is a summary of the results from a round of tests run on my personal machin
 
 ### Sets
 
-1. io.
+1. io.vavr.collection.HashSet was slower across the board than I anticipated when compared to java.util.HashSet.
 
 ### Maps
 
