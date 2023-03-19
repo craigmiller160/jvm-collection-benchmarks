@@ -16,6 +16,7 @@ java {
 
 dependencies {
     implementation("io.vavr:vavr:0.10.4")
+    implementation("org.pcollections:pcollections:4.0.1")
 }
 
 jmh {
