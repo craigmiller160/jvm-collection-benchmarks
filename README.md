@@ -21,7 +21,21 @@ A variety of "immutable mutation" solutions will be compared against mutable one
 
 ## How to Run
 
-Use the `run.sh` script at the root of the project, passing in the name of the language-specific project directory as an argument. This ensures that the above benchmarking settings are consistently applied across all projects.
+Use the `run.sh` script at the root of the project, as it will set environment variables to ensure consistent run conditions.
+
+```bash
+# Run the whole suite of java benchmarks
+./run.sh java
+
+# Run a specific java benchmark, in this case JavaListBenchmarks.append1
+./run.sh java JavaListBenchmarks.add1
+
+# Run the whole suite of kotlin benchmarks
+./run.sh kotlin
+
+# Run a specific kotlin benchmark, in this case KotlinListBenchmarks.append1
+./run.sh kotlin KotlinListBenchmarks.append1
+```
 
 ## Result Summary
 
@@ -50,7 +64,7 @@ This is a summary of the results from a round of tests run on my personal machin
 
 | Operation     | java.util.HashSet | io.vavr.collection.HashSet | kotlin.collection.Set | kotlin.collection.MutableSet | kotlinx.collections.immutable.PersistentSet |
 |---------------|-------------------|----------------------------|-----------------------|------------------------------|---------------------------------------------|
-| Add 1 item    | 0.201 ms/op       |                            |                       |                              |                                             |
+| Add 1 item    | 0.201 ms/op       | 0.159 ms/op                |                       |                              |                                             |
 | Add 100 items | 0.500 ms/op       |                            |                       |                              |                                             |
 | Remove 1 item | 0.289 ms/op       |                            |                       |                              |                                             |
 
