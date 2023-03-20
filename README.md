@@ -88,6 +88,7 @@ This is a summary of the results from a round of tests run on my personal machin
 
 1. Prepend operations on java.util.List are extremely slow because of the need to shift the existing elements. I expected as much, but knowing that Vavr is most efficient with its prepend operations I felt it was important to include this for comparison.
 2. io.vavr.collection.List requires its prepend operations to be used in order to be efficient. This can lead to counter-intuitive ordering when building a list. In addition, its remove operations appear to work best at the end of the list, not the beginning. Overall it can be an extremely efficient data structure, but it has to be used very precisely in order to achieve this.
+3. kotlinx.collection.PersistentList performs incredibly well in most areas. However it seems to have issues with random access modifications. This means changes at the end of the list (adding, removing, etc) all work great, but changes at in the middle (or worse, at the beginning) do not.
 
 ### Sets
 
