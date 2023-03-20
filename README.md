@@ -47,6 +47,12 @@ Use the `run.sh` script at the root of the project, as it will set environment v
 | List       | Kotlin   | Kotlin Std Lib      | 1.8.10  | kotlin.collection.List            |
 | List       | Kotlin   | Kotlin Std Lib      | 1.8.10  | kotlin.collection.MutableList     |
 | List       | Kotlin   | Kotlinx Collections | 0.3.5   | kotlinx.collection.PersistentList |
+| Set        | Java     | Java SDK            | 19      | java.util.HashSet                 |
+| Set        | Java     | Vavr                | 0.10.4  | io.vavr.collection.HashSet        |
+| Set        | Java     | PCollections        | 4.0.1   | org.collections.HashTreePSet      |
+| Set        | Kotlin   | Kotlin Std Lib      | 1.8.10  | kotlin.collection.Set             |
+| Set        | Kotlin   | Kotlin Std Lib      | 1.8.10  | kotlin.collection.MutableSet      |
+| Set        | Kotlin   | Kotlinx Collections | 0.3.5   | kotlinx.collection.PersistentSet  |
 
 ## Result Summary
 
