@@ -39,9 +39,14 @@ Use the `run.sh` script at the root of the project, as it will set environment v
 
 ## Classes Being Tested
 
-| Collection | Language | Source   | Version | Class               |
-|------------|----------|----------|---------|---------------------|
-| List       | Java     | Java SDK | 19      | java.util.ArrayList |
+| Collection | Language | Source              | Version | Class                             |
+|------------|----------|---------------------|---------|-----------------------------------|
+| List       | Java     | Java SDK            | 19      | java.util.ArrayList               |
+| List       | Java     | Vavr                | 0.10.4  | io.vavr.collection.List           |
+| List       | Java     | PCollections        | 4.0.1   | org.pcollections.TreePVector      |
+| List       | Kotlin   | Kotlin Std Lib      | 1.8.10  | kotlin.collection.List            |
+| List       | Kotlin   | Kotlin Std Lib      | 1.8.10  | kotlin.collection.MutableList     |
+| List       | Kotlin   | Kotlinx Collections | 0.3.5   | kotlinx.collection.PersistentList |
 
 ## Result Summary
 
@@ -89,6 +94,7 @@ This is a summary of the results from a round of tests run on my personal machin
 1. Prepend operations on java.util.List are extremely slow because of the need to shift the existing elements. I expected as much, but knowing that Vavr is most efficient with its prepend operations I felt it was important to include this for comparison.
 2. io.vavr.collection.List requires its prepend operations to be used in order to be efficient. This can lead to counter-intuitive ordering when building a list. In addition, its remove operations appear to work best at the end of the list, not the beginning. Overall it can be an extremely efficient data structure, but it has to be used very precisely in order to achieve this.
 3. kotlinx.collection.PersistentList performs incredibly well in most areas. However it seems to have issues with random access modifications. This means changes at the end of the list (adding, removing, etc) all work great, but changes at in the middle (or worse, at the beginning) do not.
+4. PTreeVector is a bit disappointing. It certainly is not a terrible performer, but it doesn't compare Vavr and kotlinx in efficiency.
 
 ### Sets
 
