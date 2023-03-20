@@ -53,6 +53,12 @@ Use the `run.sh` script at the root of the project, as it will set environment v
 | Set        | Kotlin   | Kotlin Std Lib      | 1.8.10  | kotlin.collection.Set             |
 | Set        | Kotlin   | Kotlin Std Lib      | 1.8.10  | kotlin.collection.MutableSet      |
 | Set        | Kotlin   | Kotlinx Collections | 0.3.5   | kotlinx.collection.PersistentSet  |
+| Map        | Java     | Java SDK            | 19      | java.util.HashMap                 |
+| Map        | Java     | Vavr                | 0.10.4  | io.vavr.collection.HashMap        |
+| Map        | Java     | PCollections        | 4.0.1   | org.pcollections.HashTreePMap     |
+| Map        | Kotlin   | Kotlin Std Lib      | 1.8.10  | kotlin.collection.Map             | 
+| Map        | Kotlin   | Kotlin Std Lib      | 1.8.10  | kotlin.collection.HashMap         |
+| Map        | Kotlin   | Kotlinx Collections | 0.3.5   | kotlinx.collection.PersistentMap  |
 
 ## Result Summary
 
