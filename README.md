@@ -126,8 +126,8 @@ The original round of tests on Kotlin's `MutableList` returned very different re
 | Append 100 items       | 57.418 ms/op                |
 | Prepend 1 item         | 117.835 ms/op               |
 | Prepend 100 items      | 121.001 ms/op               |
-| Remove 1 item at end   |                             |
-| Remove 1 item at start |                             |
+| Remove 1 item at end   | 0.171 ms/op                 |
+| Remove 1 item at start | 64.074 ms/op                |
 
 These numbers were very shocking because the expectation was that `MutableList` would perform on part with Java's `ArrayList` (which is the under-the-hood implementation of `MutableList`), and that was not the case. On further investigation, the root cause was determined to be capacity size.
 
