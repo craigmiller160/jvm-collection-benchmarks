@@ -80,8 +80,8 @@ This is a summary of the results from a round of tests run on my personal machin
 | Append 100 items       | 0.250 ms/op         | 1,370.798 ms/op         | 9.214 ms/op                  | 128.721 ms/op          | 0.471 ms/op                   | 0.433 ms/op                                  |
 | Prepend 1 item         | 40.690 ms/op        | 0.162 ms/op             | 1.316 ms/op                  | 129.202 ms/op          | 117.835 ms/op                 | 302.151 ms/op                                |
 | Prepend 100 items      | 39.568 ms/op        | 0.327 ms/op             | 4.077 ms/op                  | 136.102 ms/op          | 121.001 ms/op                 | 189.092 ms/op                                |
-| Remove 1 item at end   | 0.164 ms/op         | 0.343 ms/op             | 1.480 ms/op                  | 123.420 ms/op          |                               | 0.225 ms/op                                  |
-| Remove 1 item at start | 43.065 ms/op        | 1,496.437 ms/op         | 1.107 ms/op                  | 136.924 ms/op          |                               | 247.828 ms/op                                |
+| Remove 1 item at end   | 0.164 ms/op         | 0.343 ms/op             | 1.480 ms/op                  | 123.420 ms/op          | 0.171 ms/op                   | 0.225 ms/op                                  |
+| Remove 1 item at start | 43.065 ms/op        | 1,496.437 ms/op         | 1.107 ms/op                  | 136.924 ms/op          | 64.074 ms/op                  | 247.828 ms/op                                |
 
 ### Set Tests
 
