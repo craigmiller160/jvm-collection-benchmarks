@@ -107,6 +107,7 @@ This is a summary of the results from a round of tests run on my personal machin
 2. io.vavr.collection.List requires its prepend operations to be used in order to be efficient. This can lead to counter-intuitive ordering when building a list. In addition, its remove operations appear to work best at the end of the list, not the beginning. Overall it can be an extremely efficient data structure, but it has to be used very precisely in order to achieve this.
 3. kotlinx.collection.PersistentList performs incredibly well in most areas. However it seems to have issues with random access modifications. This means changes at the end of the list (adding, removing, etc) all work great, but changes at in the middle (or worse, at the beginning) do not.
 4. PTreeVector is a bit disappointing. It certainly is not a terrible performer, but it doesn't compare Vavr and kotlinx in efficiency.
+5. kotlin.collection.MutableList performance is shocking. I'm completely confused as to the results.
 
 ### Sets
 
