@@ -116,3 +116,16 @@ This is a summary of the results from a round of tests run on my personal machin
 ### Maps
 
 1. io.vavr.collection.HasMap was slower across the board than I anticipated when compared to java.util.HashMap.
+
+## Addendum on Kotlin `MutableList`
+
+The original round of tests on Kotlin's `MutableList` returned very different results. Here are the original numbers:
+
+| Operation              | Original MutableList Result |
+|------------------------|-----------------------------|
+| Append 1 item          | 46.595 ms/op                |
+| Append 100 items       | 57.418 ms/op                |
+| Prepend 1 item         | 117.835 ms/op               |
+| Prepend 100 items      | 121.001 ms/op               |
+| Remove 1 item at end   |                             |
+| Remove 1 item at start |                             |

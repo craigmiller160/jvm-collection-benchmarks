@@ -17,6 +17,7 @@ open class KotlinMutableListBenchmarks {
         @Setup(Level.Invocation)
         fun setUp() {
             LIST = (0 until SIZE).map { "$it" }.toMutableList()
+            (LIST as ArrayList<String>).ensureCapacity(1_001_000)
             MORE_RECORDS = (0 until 100).map { "more_$it" }.toMutableList()
         }
     }
