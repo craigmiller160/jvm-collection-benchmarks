@@ -107,7 +107,6 @@ This is a summary of the results from a round of tests run on my personal machin
 2. io.vavr.collection.List requires its prepend operations to be used in order to be efficient. This can lead to counter-intuitive ordering when building a list. In addition, its remove operations appear to work best at the end of the list, not the beginning. Overall it can be an extremely efficient data structure, but it has to be used very precisely in order to achieve this.
 3. kotlinx.collection.PersistentList performs incredibly well in most areas. However it seems to have issues with random access modifications. This means changes at the end of the list (adding, removing, etc) all work great, but changes at in the middle (or worse, at the beginning) do not.
 4. PTreeVector is a bit disappointing. It certainly is not a terrible performer, but it doesn't compare Vavr and kotlinx in efficiency.
-5. kotlin.collection.MutableList performance is shocking. I'm completely confused as to the results.
 
 ### Sets
 
@@ -129,3 +128,9 @@ The original round of tests on Kotlin's `MutableList` returned very different re
 | Prepend 100 items      | 121.001 ms/op               |
 | Remove 1 item at end   |                             |
 | Remove 1 item at start |                             |
+
+These numbers were very shocking because the expectation was that `MutableList` would perform on part with Java's `ArrayList` (which is the under-the-hood implementation of `MutableList`), and that was not the case. On further investigation, the root cause was determined to be capacity size.
+
+When using the `toMutableList()` function, the resulting `MutableList` wraps an `ArrayList` which wraps an `Array` which has a max capacity equal to the exact size of the collection `toMutableList()` was invoked upon. This means that any operation that follows necessitates cloning the array into one with a higher capacity. This is why the extra cost occurred.
+
+In the `ArrayList` tests, the list was constructed differently and it is believed that it had a higher max capacity at the conclusion of its construction. This explains the difference, and once this capacity issue was manually corrected in the setup for `MutableList` the test results became much more in line with expectations.
